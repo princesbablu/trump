@@ -1,0 +1,51 @@
+.brands {
+    padding: 104px 0;
+    background-image: url("../img/partbersbg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include lg {
+        padding: 70px 0;
+    }
+    @include mmd {
+        padding: 50px 0;
+    }
+    .container {
+        padding: 0 30px;
+    }
+    &-heading {
+        h3 {
+            @include font-100;
+            margin-bottom: 72px;
+            @include sm {
+                font-size: 35px;
+                margin-bottom: 55px;
+            }
+        }
+    }
+    &-icons-item {
+        margin-bottom: 100px;
+        @include md {
+            margin-bottom: 50px;
+        }
+        @include sm {
+            margin-bottom: 30px;
+        }
+    }
+    &-icon {
+        border: 4px solid $black;
+        background: $white;
+        padding: 17px;
+        // margin-bottom: 100px;
+        width: 100%;
+        height: 140px;
+        @include lg {
+            height: 106px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

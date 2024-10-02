@@ -1,0 +1,125 @@
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: calc(26px/16px);
+    color: $text;
+    font-family: $font-1;
+    background-color: $bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+    @include transition;
+}
+
+input,
+textarea,
+button {
+    padding: 10px 25px;
+    border: 1px solid $border;
+    outline: none;
+    @include transition;
+    &:focus {
+        outline: none;
+        border-color: $primary;
+    }
+}
+
+
+/*Hide number spin button*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.common {
+    &-marquee {
+        & h4 {
+            @include font-40;
+        }
+    }
+}
+
+.btn {
+    --bs-btn-padding-x: 20px;
+    --bs-btn-padding-y: 10px;
+    --bs-btn-font-size: 16px;
+    --bs-btn-border-radius: 12px;
+    &:hover {
+        background-color: $primary !important;
+        border-color: $primary !important;
+        color: $white !important;
+        .footer & {
+            border-color: $white !important;
+        }
+    }
+}
+
+// social 
+.social {
+    &-link {
+        --width: 40px;
+        width: var(--width);
+        height: var(--width);
+        background-color: transparent;
+        color: $black;
+        --bs-border-width: 1.3px;
+        --bs-border-color: #000000;
+        &:hover {
+            background-color: $primary;
+            color: $white;
+            --bs-border-color: #0345FD;
+        }
+        .footer & {
+            border-color: $white !important;
+            color: $white !important;
+            &:hover {
+                background-color: $white !important;
+                color: $black !important;
+                --bs-border-color: $white !important;
+            }
+        }
+    }
+}
+
+#root {
+    overflow: hidden;
+}
+
+.container {
+    @media (min-width: 1580px) {
+        max-width: 1554px;
+    }
+}

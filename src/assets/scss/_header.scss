@@ -1,0 +1,142 @@
+@keyframes headerAnimation {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background-color: trans;
+    padding: var(--bs-navbar-padding-y) 0;
+    --bs-navbar-padding-y: 30px;
+    @include md {
+        --bs-navbar-padding-y: 20px;
+    }
+    @include sm {
+        --bs-navbar-padding-y: 1rem;
+    }
+    &.position-fixed {
+        animation: headerAnimation .5s linear;
+        background-color: rgba($color: $bg, $alpha: .95);
+        backdrop-filter: blur(3px);
+        --bs-navbar-padding-y: 24px;
+        @include md {
+            --bs-navbar-padding-y: 1rem;
+        }
+        @include sm {
+            --bs-navbar-padding-y: 12px;
+        }
+    }
+    &-clear {
+        height: 112px;
+        @include md {
+            height: 92px;
+        }
+        @include sm {
+            height: 84px;
+        }
+    }
+    & .container {
+        @media only screen and (min-width: 992px) and (max-width: 1439px) {
+            max-width: 100%;
+        }
+    }
+    &-wrap {
+        & .social {
+            display: none !important;
+        }
+    }
+    &-menu {
+        @include mmd {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba($color: $white, $alpha: .97);
+            padding: 24px;
+            z-index: 9;
+            transform: translateY(150%);
+            @include transition;
+            &.show-menu {
+                transform: translate(0, 0);
+            }
+        }
+        @include sm {
+            padding: 1rem;
+        }
+        & .title {
+            margin-bottom: 32px;
+            @include sm {
+                margin-bottom: 24px;
+            }
+        }
+        & .heading-actions {
+            @include mmd {
+                margin-top: 32px;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            @include sm {
+                margin-top: 26px;
+            }
+        }
+    }
+    &-link {
+        @include font-20;
+        color: #313131;
+        font-weight: 400;
+        font-family: $font-1;
+        display: block;
+        padding: 10px 1rem;
+        cursor: pointer;
+        @include lg {
+            padding: 10px 12px;
+        }
+        @include mmd {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        &:hover,
+        &.active {
+            color: $primary;
+        }
+    }
+    &-toggler {
+        --btn-padding-x: 4px;
+        --btn-padding-y: 5px;
+        padding: var(--btn-padding-y) var(--btn-padding-x);
+        border: none;
+        background-color: transparent;
+        color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &-actions {
+        gap: 32px;
+        @include lg {
+            gap: 26px;
+        }
+        @include md {
+            gap: 24px;
+        }
+        @include sm {
+            gap: 14px;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.footer {
+    padding: 116px 0 105px;
+    @include xl {
+        padding: 86px 0 70px;
+    }
+    @include md {
+        padding: 86px 0 70px;
+    }
+    @include sm {
+        padding: 60px 0 60px;
+    }
+    &-logo {
+        & img {
+            width: 175px;
+            height: 175px;
+            object-fit: cover;
+            border-radius: 100px;
+            @include xl {
+                width: 120px;
+                height: 120px;
+            }
+            @include md {
+                width: 120px;
+                height: 120px;
+            }
+            @include sm {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+    &-content {
+        & p {
+            @include font-18;
+            letter-spacing: 0.54px;
+        }
+    }
+}

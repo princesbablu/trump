@@ -1,0 +1,46 @@
+
+/* Accordion */
+
+.accordion {
+    &-item {
+        --bs-accordion-border-radius: 12px;
+        --bs-accordion-bg: #151514;
+        --bs-accordion-border-color: #2D2D2C;
+        --bs-accordion-btn-bg: transparent;
+        --bs-accordion-active-bg: #1d1d1c;
+        --padding: 32px;
+        overflow: hidden;
+        @include md {
+            --padding: 26px;
+        }
+        @include sm {
+            --padding: 20px;
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--bs-accordion-border-color);
+        }
+    }
+    &-button {
+        box-shadow: 0 0 0 !important;
+        @include font-22;
+        font-weight: 600;
+        color: $heading !important;
+        padding: var(--padding);
+        &:not(.collapsed) {
+            padding-bottom: calc(var(--padding) / 4 * 3);
+        }
+        &::after {
+            align-items: flex-start;
+            --bs-accordion-btn-icon-width: 32px;
+            --bs-accordion-btn-icon: url("data:image/svg+xml;charset=UTF-8, %3csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='32' height='32' rx='16' fill='%232E2E2E'/%3e%3cpath d='M22.0392 12.6419C21.861 12.4638 21.6195 12.3637 21.3676 12.3637C21.1157 12.3637 20.8742 12.4638 20.696 12.6419L15.9942 17.3437L11.2924 12.6419C11.1132 12.4688 10.8733 12.3731 10.6242 12.3753C10.3752 12.3774 10.1369 12.4773 9.96081 12.6534C9.7847 12.8295 9.68481 13.0678 9.68264 13.3168C9.68048 13.5659 9.77622 13.8058 9.94924 13.985L15.3226 19.3584C15.5008 19.5364 15.7423 19.6365 15.9942 19.6365C16.2461 19.6365 16.4876 19.5364 16.6658 19.3584L22.0392 13.985C22.2172 13.8068 22.3173 13.5653 22.3173 13.3134C22.3173 13.0615 22.2172 12.82 22.0392 12.6419Z' fill='white'/%3e%3c/svg%3e ");
+            --bs-accordion-btn-active-icon: var(--bs-accordion-btn-icon);
+        }
+    }
+    &-body {
+        padding: var(--padding) !important;
+        padding-top: 0 !important;
+        color: $paragraph;
+        @include font-20;
+        background-color: var(--bs-accordion-active-bg);
+    }
+}
